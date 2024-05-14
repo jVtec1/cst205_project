@@ -1,3 +1,6 @@
+# Anthony Constante, Andy Espinoza, Abel Plascencia, Emily Grimaldo
+# CST205
+# This file was initiated and completed by Andy Espinoza
 import requests, json
 from urllib.request import urlopen
 
@@ -42,8 +45,8 @@ for i in range(len(models)):
         print("Error:", response_test.status_code, response_test.text)
 
 #prints all information stored in variable
-print(info_bank)
+#print(info_bank)
 #prints all information of the model in index list 0 of "models" list (which is camry in this case)
 print(info_bank[0])
 #prints specific information of that model, in this case the year. 
-print(info_bank[0]['year'])
+#print(info_bank[0]['year'])
