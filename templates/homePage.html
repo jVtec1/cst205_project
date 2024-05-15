@@ -1,0 +1,201 @@
+<!--Anthony Constante, Andy Espinoza, Abel Plascencia, Emily Grimaldo-->
+<!--CST 205-->
+<!--Japanese Car Canvas-->
+<!--This page was done and worked on by Anthony, Abel and Emily.
+Anthony: Found all the HTML Tags that have been provided in this file from https://www.w3schools.com/html. 
+Created the layout of the images along with the text so that they could be displayed
+in a 4 x 4 and fill the whole page.
+Abel: Created Logo Header and the brief introduction. Created urls for the images and finished it off with credits.
+Emily: Adjusted the code so that it fits to our wants.
+Helped with the design of the page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<!--"body" class changes the background color to black, giving the black web page-->
+<!--"ul" class changes word font and space size-->
+<!--"li" class is to add indent-->
+<!--"li a" class aligns text to the center-->
+<!--".tab" class is our custom tab size to use for spacing-->
+<!--".tabimage" class is a custom tab size for image spacing.-->
+<style>
+body {
+    background-color:black;
+}
+
+ul {
+  list-style-type: none;
+  font-size: large;
+  font-style: italic;
+  font-family:'Courier New', Courier, monospace; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: inline-start;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration:none;
+}
+
+li a:hover {
+  background-color: black;
+}
+.tab {
+    display:inline-block;
+    margin-left: 350px
+}
+.tabImage {
+    display:inline-block;
+    margin-left: 150px
+}
+</style>
+
+<!--Found all code above in "<style>" section from a website https://www.w3schools.com/html It helps with creating a block with a click radius and then it sets them in line next to each other.
+Then some of these codes allow us to indent and create a space.-->
+
+<body>
+    <!-- Creating Logo Header for the Home Page by combining multiple images-->
+    <img src="/static/images/{{logo}}.jpg" width="500" height="150">
+    <img src="/static/images/{{stars}}.png" width="250" height="150">
+    <img src="/static/images/{{stars}}.png" width="250" height="150">
+    <img src="/static/images/{{stars}}.png" width="250" height="150">
+    <img src="/static/images/{{stars}}.png" width="250" height="150">
+    <img src="/static/images/{{stars}}.png" width="150" height="150">
+    <p></p>
+    <h1 style="color: white"> Welcome to NightKids Garage. Feel free to browse over the collection.</h1>
+    <p style="color: yellow;">Click on the vehicle image/name for more information.</p>
+    <p style="color: white;">The Myogi NightKids (妙義ナイトキッズ Myōgi Naitokizzu) is a racing team composed of highly skilled drivers, led by Takeshi Nakazato. Even though the team is united under Takeshi, there seem to be two factions fighting for leadership aligned with Takeshi and the team's number two driver, Shingo Shoji. 
+        Their home course is Myogi, in Gunma. Shingo and Takeshi both exhibit aggressive driving styles, hence why their races with 
+        Akina's Eight-Six both ended in a crash. When it matters most, the team comes together under the #1 and #2 drivers, their uphill and downhill aces respectively. 
+        The partial car roster is listed below.</p> <!--Found this info at intiald.fandom-->
+    <p style="color: white;">Initial D Inspired</p>
+    <!--Credits too https://initiald.fandom.com/wiki/Myogi_NightKids for the information in above description-->
+    <!-- Allows the text to be clickable and tabs a bit to allow for space-->
+
+    <ul> <!--Put these together so that they are next to each other and just doesnt go all the way down forever.Allows for four cars per row/column-->
+        <li><a href="{{ url_for('carInformation', choice='one')}}">{{CN[0]["model"]}}<span class="tab"></span></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='five')}}">{{CN[4]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='nine')}}">{{CN[8]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='thirteen')}}">{{CN[12]["model"]}}</span></a></li>
+        
+    </ul>
+    
+    <p></p>
+    <!-- Creating url that leads to information about the car, picture is clickable as well.-->
+    <a href="{{ url_for('carInformation', choice='one')}}">
+    <img src="/static/images/{{CIM[0]}}.jpg" width="250"
+        class="img-fluid rounded" alt="{{CIM[0]}}" />
+    </a><span class="tabImage"></span> <!-- Indenting images to create space and make look cleaner-->
+    <a href="{{ url_for('carInformation', choice='five')}}">
+        <img src="/static/images/{{CIM[4]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[4]}}" />
+        </a>
+    <span class="tabImage"></span>
+    <a href="{{ url_for('carInformation', choice='nine')}}">
+    <img src="/static/images/{{CIM[8]}}.jpg" width="250"
+        class="img-fluid rounded" alt="{{CIM[8]}}" />
+    </a><span class="tabImage"></span>
+    <a href="{{ url_for('carInformation', choice='thirteen')}}">
+        <img src="/static/images/{{CIM[12]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[12]}}" />
+            </a>
+        <p></p>
+    <ul> <!-- Repeated Code from above-->
+        <li><a href="{{ url_for('carInformation', choice='two')}}">{{CN[1]["model"]}}<span class="tab"></span></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='six')}}">{{CN[5]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='ten')}}">{{CN[9]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='fourteen')}}">{{CN[13]["model"]}}</span></a></li>
+        
+    </ul>
+    <p></p>
+
+    <a href="{{ url_for('carInformation', choice='two')}}">
+        <img src="/static/images/{{CIM[1]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[1]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='six')}}">
+            <img src="/static/images/{{CIM[5]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[5]}}" />
+            </a>
+        <span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='ten')}}">
+        <img src="/static/images/{{CIM[9]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[9]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='fourteen')}}">
+            <img src="/static/images/{{CIM[13]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[13]}}" />
+                </a>
+            <p></p>
+    
+    <p></p>
+    <ul>
+        <li><a href="{{ url_for('carInformation', choice='three')}}">{{CN[2]["model"]}}<span class="tab"></span></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='seven')}}">{{CN[6]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='eleven')}}">{{CN[10]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='fifteen')}}">{{CN[14]["model"]}}</span></a></li>
+        
+    </ul>
+    <p></p>
+
+    <a href="{{ url_for('carInformation', choice='three')}}">
+        <img src="/static/images/{{CIM[2]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[2]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='seven')}}">
+            <img src="/static/images/{{CIM[6]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[6]}}" />
+        </a>
+        <span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='eleven')}}">
+        <img src="/static/images/{{CIM[10]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[10]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='fifteen')}}">
+            <img src="/static/images/{{CIM[14]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[14]}}" />
+        </a>
+            <p></p>
+    
+    <p></p>
+    <ul>
+        <li><a href="{{ url_for('carInformation', choice='four')}}">{{CN[3]["model"]}}<span class="tab"></span></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='eight')}}">{{CN[7]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='twelve')}}">{{CN[11]["model"]}}<span class="tab"></span></a></li>
+        <li><a href="{{ url_for('carInformation', choice='sixteen')}}">{{CN[15]["model"]}}</span></a></li>
+        
+    </ul>
+    <p></p>
+
+    <a href="{{ url_for('carInformation', choice='four')}}">
+        <img src="/static/images/{{CIM[3]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[3]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='eight')}}">
+            <img src="/static/images/{{CIM[7]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[7]}}" />
+        </a>
+        <span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='twelve')}}">
+        <img src="/static/images/{{CIM[11]}}.jpg" width="250"
+            class="img-fluid rounded" alt="{{CIM[11]}}" />
+        </a><span class="tabImage"></span>
+        <a href="{{ url_for('carInformation', choice='sixteen')}}">
+            <img src="/static/images/{{CIM[15]}}.jpg" width="250"
+                class="img-fluid rounded" alt="{{CIM[15]}}" />
+        </a>
+            <p></p>
+
+        <!-- Image at the bottom to have a nice finish-->
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="75">
+        
+</body>
+</html>

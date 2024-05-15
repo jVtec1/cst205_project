@@ -1,0 +1,321 @@
+<!--Anthony Constante, Andy Espinoza, Abel Plascencia, Emily Grimaldo-->
+<!--CST 205-->
+<!--Japanese Car Canvas-->
+<!--This page was done with the help from Anthony and Andy and Emily.
+Anthony: Did the research to get the page the way we wanted it. Set the body and img code blocks.
+Andy: Created the body.Created the if statements and loaded in the pictures into the page.
+Emily: Helped with finding the specific images wanted. Did research and created the styles for page. Customized sizes of pictures.
+Found information to describe the pictures-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ bootstrap.load_css() }}
+</head>
+<!--"img" class centers the image on the screen-->
+<!--"body" class sets desired font and changes text color and background color-->
+<style>
+body {
+    background-color:black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px double yellow; 
+
+}
+
+.tab {
+    display:inline-block;
+    margin-left: 50px
+}
+</style>
+
+<!-- Code above helps put the images in the middle and then it gives it a border that matches the theme, 
+    it also sets a font, found it at W3Schools.Really good website for html info.-->
+
+<body>
+    {% if choice=="one" %} <!--Each section is given their choice value and depending on the click will activate a certain if statement-->
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[0]["make"]}} {{CN[0]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[0]}}.jpg" width="1000" 
+            class="img-fluid rounded" alt="{{CIM[0]}}" /> <!-- smoothen picture from corners-->
+        <p></p>
+        
+        <p style="text-align: center;"> <!--Align the text to center to make it look cleaner-->
+            The Mazda RX-7 is a front-engine, rear-wheel-drive, rotary engine-powered sports car that was manufactured and marketed by <!--All info gathered from initiald.fandom-->
+             Mazda from 1978 until 2002 across three generations, all of which made use of a compact, lightweight Wankel rotary engine.</p>
+        <p style="text-align: center;">
+            City MPG: {{CN[0]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[0]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[0]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[0]["drive"]}} <span class="tab"></span>
+            Class: {{CN[0]["class"]}} <span class="tab"></span> Cylinders: {{CN[0]["cylinders"]}} <span class="tab"></span> Year: {{CN[0]["year"]}}
+            </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a> <!--Give user ability to return back to home page-->
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="two" %} <!-- Repeats for every single choice.-->
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[1]["make"]}} {{CN[1]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[1]}}.jpg" width="1000"
+        class="img-fluid rounded" alt="{{CIM[1]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">Produced from 1999 to 2002, the R34 GT-R took everything that was great about the previous models and elevated it to new heights. 
+            With advanced features like all-wheel drive, four-wheel steering, and a twin-turbocharged engine, the R34 GT-R quickly became a legend in the world of performance cars.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[1]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[1]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[1]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[1]["drive"]}} <span class="tab"></span>
+                Class: {{CN[1]["class"]}} <span class="tab"></span> Cylinders: {{CN[1]["cylinders"]}} <span class="tab"></span> Year: 2001
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="three" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[2]["make"]}} {{CN[2]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[2]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[2]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The 240SX is known for its popularity within drifting and tuner culture. However, due to the popularity of the S-chassis 
+            in drifting and related competitions, prices for vehicles and parts have greatly increased due to higher demand. This problem is sometimes known as "drift tax".</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[2]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[2]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[2]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[2]["drive"]}} <span class="tab"></span>
+                Class: {{CN[2]["class"]}} <span class="tab"></span> Cylinders: {{CN[2]["cylinders"]}} <span class="tab"></span> Year: {{CN[2]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="four" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[3]["make"]}} {{CN[3]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[3]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[3]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The legendary Mk4 Supra was propelled to fame by the immortal 2JZ engine. The Mk4 Supra's immortality is due to the legendary 2JZ engine. 
+            This engine was over-engineered to the point where it could produce over 1000 horsepower without requiring any internal modifications.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[3]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[3]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[3]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[3]["drive"]}} <span class="tab"></span>
+                Class: {{CN[3]["class"]}} <span class="tab"></span> Cylinders: {{CN[3]["cylinders"]}} <span class="tab"></span> Year: {{CN[3]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="five" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[4]["make"]}} {{CN[4]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[4]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[4]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The S2000, equipped with the powerful F20C motor along with the FR configuration, all points to the direction of emphasis on speed.
+             Speed also comes with the great exterior styling on this vehicle which even the older generation enthusiasts can take pleasure in.</p>
+             <p style="text-align: center;">
+                City MPG: {{CN[4]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[4]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[4]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[4]["drive"]}} <span class="tab"></span>
+                Class: {{CN[4]["class"]}} <span class="tab"></span> Cylinders: {{CN[4]["cylinders"]}} <span class="tab"></span> Year: {{CN[4]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="six" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[5]["make"]}} {{CN[5]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[5]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[5]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">For all-around use—an "everyday sports car," as Acura calls it—the RSX is tough to top. It's quiet, comfortable, handsomely finished, good to look at, fast enough to dissect traffic, 
+            agile enough to be entertaining on your favorite stretch of back road. The Type-S was already top dog in its class.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[5]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[5]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[5]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[5]["drive"]}} <span class="tab"></span>
+                Class: {{CN[5]["class"]}} <span class="tab"></span> Cylinders: {{CN[5]["cylinders"]}} <span class="tab"></span> Year: {{CN[5]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="seven" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[6]["make"]}} {{CN[6]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[6]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[6]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The 300ZX was known for its advanced technology, such as four-wheel steering and speed-sensitive steering, and offered a comfortable and user-friendly driving experience. 
+            Despite its appeal, the car is still reasonably priced and has the potential to become a future classic.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[6]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[6]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[6]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[6]["drive"]}} <span class="tab"></span>
+                Class: {{CN[6]["class"]}} <span class="tab"></span> Cylinders: {{CN[6]["cylinders"]}} <span class="tab"></span> Year: {{CN[6]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="eight" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[7]["make"]}} {{CN[7]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[7]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[7]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">Thus, it was decided that the NSX would have the world's first all-aluminum, monocoque body. The world's first mass-production car to offer an all-aluminum, monocoque body. 
+            No other automaker had yet to build a car primarily of aluminum, however, even though the material was pollution-free and in abundant supply.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[7]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[7]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[7]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[7]["drive"]}} <span class="tab"></span>
+                Class: {{CN[7]["class"]}} <span class="tab"></span> Cylinders: {{CN[7]["cylinders"]}} <span class="tab"></span> Year: {{CN[7]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="nine" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[8]["make"]}} {{CN[8]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[8]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[8]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The unique liftback design of the Integra is where form and function meet. With a spacious opening and 60/40 split fold-down rear seats,
+             the Integra offers versatility to support your active lifestyle.</p>
+             <p style="text-align: center;">
+                City MPG: {{CN[8]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[8]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[8]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[8]["drive"]}} <span class="tab"></span>
+                Class: {{CN[8]["class"]}} <span class="tab"></span> Cylinders: {{CN[8]["cylinders"]}} <span class="tab"></span> Year: {{CN[8]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="ten" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[9]["make"]}} {{CN[9]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[9]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[9]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">Driving a Nissan 350Z with a stock engine is a hugely enjoyable experience. The engine isn't especially powerful, but it pulls cleanly all the way to its stock redline 
+            of 6,500 rpm, and thanks to variable valve timing, it also feels torquey lower down in the revs when you're just cruising around.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[9]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[9]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[9]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[9]["drive"]}} <span class="tab"></span>
+                Class: {{CN[9]["class"]}} <span class="tab"></span> Cylinders: {{CN[9]["cylinders"]}} <span class="tab"></span> Year: {{CN[9]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="eleven" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[10]["make"]}} {{CN[10]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[10]}}.jpeg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[10]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The Prelude was the first Honda model to offer a power moonroof as standard equipment, which eventually became a Prelude trademark. Despite the interior shortcomings, the 
+            Prelude is an outstanding sport coupe that offers the latest technology at a reasonably affordable price.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[10]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[10]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[10]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[10]["drive"]}} <span class="tab"></span>
+                Class: {{CN[10]["class"]}} <span class="tab"></span> Cylinders: {{CN[10]["cylinders"]}} <span class="tab"></span> Year: {{CN[10]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="twelve" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[11]["make"]}} {{CN[11]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[11]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[11]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">To make it ultra-competitive, Mitsubishi took the lightweight Lancer, reduced its weight even further, increased body and suspension rigidity and powered it with a 4G63-type intercooler 
+            turbo engine delivering torque through a 4WD system. The initial production run for racing certification sold out within days.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[11]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[11]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[11]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[11]["drive"]}} <span class="tab"></span>
+                Class: {{CN[11]["class"]}} <span class="tab"></span> Cylinders: {{CN[11]["cylinders"]}} <span class="tab"></span> Year: {{CN[11]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="thirteen" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[12]["make"]}} {{CN[12]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[12]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[12]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">With a robust driveline, reliable engine and fantastic driver-focused cabin, it's an ideal multi-purpose runabout for your family. The Subaru Impreza is an under-rated, 
+            well-equipped and unsung hero of the brand's model range and is more capable than most hatchbacks could ever dream of being</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[12]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[12]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[12]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[12]["drive"]}} <span class="tab"></span>
+                Class: {{CN[12]["class"]}} <span class="tab"></span> Cylinders: {{CN[12]["cylinders"]}} <span class="tab"></span> Year: {{CN[12]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="fourteen" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[13]["make"]}} {{CN[13]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[13]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[13]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">The Mazda MX-5 Miata made it onto Consumer Reports' list of 10 Most Reliable Cars, and what's even more impressive is that it was the only sports car on the list.
+             This is a testament to the car's balance and reliability, as it's designed to be more tolerable as a daily-driven vehicle.</p>
+             <p style="text-align: center;">
+                City MPG: {{CN[13]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[13]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[13]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[13]["drive"]}} <span class="tab"></span>
+                Class: {{CN[13]["class"]}} <span class="tab"></span> Cylinders: {{CN[13]["cylinders"]}} <span class="tab"></span> Year: {{CN[13]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="fifteen" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[14]["make"]}} {{CN[14]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[14]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[14]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">In a crowded field of compact cars, the Civic stands out for its blend of sportiness, efficiency, and advanced features. 
+            Its agile handling and responsive performance set it apart from competitors, offering an engaging and enjoyable driving experience.</p>
+            <p style="text-align: center;">
+                City MPG: {{CN[14]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[14]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[14]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[14]["drive"]}} <span class="tab"></span>
+                Class: {{CN[14]["class"]}} <span class="tab"></span> Cylinders: {{CN[14]["cylinders"]}} <span class="tab"></span> Year: {{CN[14]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% elif choice=="sixteen" %}
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+        <p></p>
+        <h1 style="text-align: center;">{{CN[15]["make"]}} {{CN[15]["model"]}}</h1> <!-- Print out car type-->
+        <p></p>
+        <img src="/static/images/{{CIM[15]}}.jpg" width="1000"
+            class="img-fluid rounded" alt="{{CIM[15]}}" />
+        <p></p>
+      
+        <p style="text-align: center;">Not only is the Toyota MR2 an iconic sports car from the 80s and 90s, but many agree that it is among the best
+             sports cars Toyota has ever built. The MR2 was Akio Yoshida's take on the exotic – both in its stylish design and driving feel.</p>
+             <p style="text-align: center;">
+                City MPG: {{CN[15]["city_mpg"]}} <span class="tab"></span> Highway MPG: {{CN[15]["highway_mpg"]}} <span class="tab"></span> Combined MPG: {{CN[15]["combination_mpg"]}} <span class="tab"></span> Drive: {{CN[15]["drive"]}} <span class="tab"></span>
+                Class: {{CN[15]["class"]}} <span class="tab"></span> Cylinders: {{CN[15]["cylinders"]}} <span class="tab"></span> Year: {{CN[15]["year"]}}
+                </p> 
+        <a href="{{ url_for('home') }}">Back to collection</a>
+        <img src="/static/images/{{lines}}.jpg" width="1675" height="50">
+    {% endif %}
+
+    
+</body>
+
+</html>
